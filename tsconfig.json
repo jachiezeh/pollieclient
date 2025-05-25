@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",                         // Modern JS features (optional chaining, etc.)
+    "lib": ["DOM", "DOM.Iterable", "ES2022"],   // Browser + modern JS APIs
+    "module": "ESNext",                         // Let Next.js handle modules
+    "moduleResolution": "bundler",              // Required for Turbopack & modern bundling
+    "allowJs": true,                            // Allow JS files in case you mix JS and TS
+    "skipLibCheck": true,                       // Improves performance, skips type checking dependencies
+    "strict": true,                             // Enables all strict type checks
+    "noEmit": true,                             // Next.js handles transpilation
+    "esModuleInterop": true,                    // Allow default import of CommonJS modules
+    "resolveJsonModule": true,                  // Allow importing `.json` files
+    "isolatedModules": true,                    // Required by Next.js for fast refresh
+    "jsx": "preserve",                          // Let Next.js handle JSX transform
+    "incremental": true,                        // Speeds up subsequent type checking
+    "types": ["node"],                          // Helpful for backend-ish code like API routes
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/*": ["./*"]                            // Optional: enables `@/components/Button`-style imports
+    }
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": ["node_modules"]
+}
