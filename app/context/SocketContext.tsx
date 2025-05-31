@@ -46,6 +46,7 @@ export const SocketProvider: React.FC<{ children: ReactNode }> = ({ children }) 
     const socketInstance = io(
       process.env.NEXT_PUBLIC_SOCKET_URL || 'http://localhost:5000', {
         transports: ['websocket'], // Force WebSocket transport
+        withCredentials: true,
       }
     );
 
